@@ -22,18 +22,17 @@ package:
 
 functions:
   hello:
-    handler: bin/hello/bootstrap
+    handler: bootstrap
     package:
-      artifact: bin/hello/bootstrap.zip
+      artifact: bin/hello/hello.zip
     events:
       - httpApi:
           path: /hello
           method: get
-
   world:
-    handler: bin/world/bootstrap
+    handler: bootstrap
     package:
-      artifact: bin/world/bootstrap.zip
+      artifact: bin/world/world.zip
     events:
       - httpApi:
           path: /world
