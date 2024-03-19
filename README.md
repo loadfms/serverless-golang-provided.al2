@@ -7,6 +7,11 @@
 
 ## Instructions
 
+To create a new serverless project using this template run the command:
+```console
+serverless --template-url "https://github.com/loadfms/serverless-golang-provided.al2"
+```
+
 Don't forget to initialize the go mod package and install the `aws-lambda-go`
 package:
 

@@ -6,15 +6,13 @@ build:
 	export GO111MODULE=on
 	export CGO_ENABLED=1
 
-	${GO_BUILD} -o bin/hello/main hello/main.go
-	chmod +x bin/hello/main
-	mv bin/hello/main bin/hello/bootstrap
-	cd bin/hello && zip bootstrap.zip bootstrap 
+	${GO_BUILD} -o bin/hello/bootstrap hello/main.go
+	chmod +x bin/hello/bootstrap
+	zip bin/hello/bootstrap.zip bin/hello/bootstrap
 
-	${GO_BUILD} -o bin/world/main world/main.go
-	chmod +x bin/world/main
-	mv bin/world/main bin/world/bootstrap
-	cd bin/world && zip bootstrap.zip bootstrap
+	${GO_BUILD} -o bin/world/bootstrap world/main.go
+	chmod +x bin/world/bootstrap
+	zip bin/world/bootstrap.zip bin/world/bootstrap
 
 clean:
 	rm -rf ./bin
