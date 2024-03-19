@@ -1,0 +1,35 @@
+service: sample-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: provided.al2
+  versionFunctions: false
+  timeout: 3
+  memorySize: 128
+  logRetentionInDays: 1
+  architecture: arm64
+
+package:
+  individually: true
+  patterns:
+    - "!./**"
+    - ./bin/**
+
+functions:
+  hello:
+    handler: bin/hello/bootstrap
+    package:
+      artifact: bin/hello/bootstrap.zip
+    events:
+      - httpApi:
+          path: /hello
+          method: get
+  world:
+    handler: bin/world/bootstrap
+    package:
+      artifact: bin/world/bootstrap.zip
+    events:
+      - httpApi:
+          path: /world
+          method: get
