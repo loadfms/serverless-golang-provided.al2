@@ -8,11 +8,11 @@ build:
 
 	${GO_BUILD} -o bin/hello/bootstrap hello/main.go
 	chmod +x bin/hello/bootstrap
-	zip bin/hello/bootstrap.zip bin/hello/bootstrap
+	zip -j bin/hello/bootstrap.zip bin/hello/bootstrap 
 
 	${GO_BUILD} -o bin/world/bootstrap world/main.go
 	chmod +x bin/world/bootstrap
-	zip bin/world/bootstrap.zip bin/world/bootstrap
+	zip -j bin/world/bootstrap.zip bin/world/bootstrap 
 
 clean:
 	rm -rf ./bin
